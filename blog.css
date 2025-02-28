@@ -1,0 +1,306 @@
+/*  =========  إعادة الضبط الأساسية والتنسيق العام  ========= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif; /* خط افتراضي مناسب (يمكن تغييره) */
+    line-height: 1.7; /* تباعد الأسطر للقراءة */
+    direction: rtl; /* اتجاه الكتابة من اليمين لليسار للمواقع العربية */
+    background-color: #f8f8f8; /* لون خلفية لطيف (يمكن تغييره) */
+    color: #333; /* لون النص الأساسي (يمكن تغييره) */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*  =========  تنسيق الشريط العلوي (Header)  ========= */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+header .logo {
+    font-size: 1.8em; /* حجم خط الشعار */
+    font-weight: bold; /* خط الشعار سميك */
+    color: #007bff; /* لون الشعار أزرق (قابل للتغيير) */
+    text-decoration: none; /* إزالة التسطير من رابط الشعار */
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav li {
+    margin-right: 20px;
+}
+
+header nav li:last-child {
+    margin-right: 0;
+}
+
+header nav a {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #f0f0f0;
+}
+
+/*  =========  تنسيق المحتوى الرئيسي (Main Content)  ========= */
+main.container {
+    display: flex;
+    padding: 30px 0;
+    gap: 30px; /* مساحة بين التدوينة والشريط الجانبي */
+    flex-direction: row; /* ترتيب العناصر أفقيًا بشكل افتراضي */
+}
+
+.blog-post {
+    flex: 3; /* التدوينة تأخذ 3 أجزاء من المساحة المتاحة */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.post-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.post-meta {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.post-meta span {
+    margin: 0 10px;
+}
+
+.post-image {
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.post-content h2, .post-content h3, .post-content h4 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+.post-content h3 { font-size: 1.8em; }
+.post-content h4 { font-size: 1.5em; }
+
+.post-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* للسماح بالتفاف العناصر على الشاشات الصغيرة */
+}
+
+.post-footer .tags, .post-footer .share-buttons {
+    margin-bottom: 10px; /* مساحة فاصلة بين العناصر على الشاشات الصغيرة */
+}
+
+.post-footer .tags a, .post-footer .share-buttons a {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.post-footer .tags a:hover, .post-footer .share-buttons a:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+.post-footer .share-buttons span {
+    margin-right: 10px; /* مساحة بين النص "شارك التدوينة" والأزرار */
+    font-weight: bold;
+}
+
+
+.sidebar {
+    flex: 1; /* الشريط الجانبي يأخذ جزء واحد من المساحة المتاحة */
+    padding: 30px;
+}
+
+.widget {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.widget:last-child {
+    margin-bottom: 0; /* إزالة المساحة السفلية من آخر عنصر widget */
+}
+
+.widget h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.widget input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.widget button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff; /* لون أزرق مميز (يمكن تغييره) */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.widget button[type="submit"]:hover {
+    background-color: #0056b3; /* لون أزرق أغمق عند التحويم */
+}
+
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.widget ul li:last-child {
+    border-bottom: none; /* إزالة الخط السفلي من آخر عنصر قائمة */
+}
+
+.widget ul li a {
+    display: block; /* لجعل الرابط يأخذ كامل عرض عنصر القائمة */
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.widget ul li a:hover {
+    color: #007bff; /* لون مميز عند التحويم (يمكن تغييره) */
+}
+
+
+/*  =========  تنسيق التذييل السفلي (Footer)  ========= */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #fff; /* لون الروابط في التذييل (يمكن تغييره) */
+    text-decoration: underline; /* إضافة تسطير للروابط في التذييل للتمييز */
+}
+
+
+/*  =========  استعلامات الوسائط (Media Queries) للتصميم المتجاوب  ========= */
+
+/* للشاشات الصغيرة (أقل من 768 بكسل - الهواتف) */
+@media (max-width: 768px) {
+    header .container,
+    main.container,
+    footer .container {
+        width: 95%; /* زيادة عرض الحاوية على الشاشات الصغيرة */
+    }
+
+    header .container {
+        flex-direction: column; /* ترتيب عناصر الشريط العلوي عموديًا */
+        text-align: center; /* توسيط النص في الشريط العلوي على الشاشات الصغيرة */
+    }
+
+    header nav ul {
+        flex-direction: column; /* ترتيب عناصر القائمة عموديًا على الشاشات الصغيرة */
+        margin-top: 10px; /* مساحة فاصلة بين الشعار والقائمة */
+    }
+
+    header nav li {
+        margin-right: 0; /* إزالة المساحة اليمنى بين عناصر القائمة */
+        margin-bottom: 10px; /* إضافة مساحة سفلية بين عناصر القائمة */
+    }
+
+    main.container {
+        flex-direction: column; /* ترتيب المحتوى الرئيسي عموديًا (تدوينة فوق الشريط الجانبي) */
+    }
+
+    .sidebar {
+        padding-top: 0; /* إزالة المساحة الداخلية العلوية للشريط الجانبي على الشاشات الصغيرة */
+    }
+
+    .post-footer {
+        flex-direction: column; /* ترتيب عناصر التذييل عموديًا على الشاشات الصغيرة */
+        text-align: center; /* توسيط النص في التذييل على الشاشات الصغيرة */
+    }
+
+    .post-footer .share-buttons {
+        text-align: center; /* توسيط أزرار المشاركة على الشاشات الصغيرة */
+    }
+}

@@ -1,0 +1,534 @@
+/* تصميم عام للصفحة */
+body {
+    font-family: sans-serif; /* خط افتراضي مناسب */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* خلفية رمادية فاتحة جدًا */
+    color: #333; /* لون النص الأساسي */
+    line-height: 1.6; /* تباعد الأسطر للقراءة */
+    direction: rtl; /* اتجاه الكتابة من اليمين لليسار */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* عرض أقصى للحاوية */
+    margin: 0 auto; /* توسيط الحاوية أفقيًا */
+    padding: 20px; /* مساحة داخلية للحاوية */
+}
+
+/* تصميم الشريط العلوي (Header) */
+header {
+    background-color: #030c1e; /* خلفية الشريط العلوي بيضاء */
+    padding: 20px 0;
+    border-bottom: 1px solid #eee; /* خط فاصل سفلي خفيف */
+    position: sticky; /* تثبيت الشريط العلوي عند التمرير */
+    top: 0;
+    z-index: 100; /* ضمان ظهور الشريط العلوي فوق المحتوى */
+}
+
+header .container {
+    display: flex; /* استخدام فليكس بوكس للتخطيط */
+    justify-content: space-between; /* توزيع العناصر بالتساوي مع مساحة بينها */
+    align-items: center; /* توسيط العناصر عموديًا */
+}
+
+header .logo {
+    font-size: 1.8em; /* حجم خط الشعار */
+    font-weight: bold; /* خط الشعار سميك */
+    color: #007bff; /* لون الشعار أزرق (قابل للتغيير) */
+    text-decoration: none; /* إزالة التسطير من رابط الشعار */
+}
+
+header nav ul {
+    list-style: none; /* إزالة النقاط من القائمة */
+    padding: 0;
+    margin: 0;
+    display: flex; /* عرض عناصر القائمة في صف أفقي */
+}
+
+header nav li {
+    margin-right: 20px; /* مساحة بين عناصر القائمة */
+}
+
+header nav li:last-child {
+    margin-right: 0; /* إزالة المساحة من العنصر الأخير */
+}
+
+header nav a {
+    text-decoration: none; /* إزالة التسطير من الروابط */
+    color: #555; /* لون روابط القائمة رمادي (قابل للتغيير) */
+    padding: 10px 15px; /* مساحة داخلية للروابط */
+    border-radius: 5px; /* حواف دائرية للروابط */
+    transition: background-color 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+}
+
+header nav a:hover {
+    background-color: #f0f0f0; /* لون خلفية الروابط عند التحويم */
+}
+
+
+/* تصميم قسم البطل (Hero Section) */
+.hero {
+    padding: 100px 0; /* مساحة داخلية عمودية كبيرة لقسم البطل */
+    text-align: center; /* توسيط النص في قسم البطل */
+}
+
+.hero .container {
+    display: grid; /* استخدام شبكة التخطيط */
+    grid-template-columns: 1fr 1fr; /* تقسيم الحاوية إلى عمودين متساويين */
+    gap: 30px; /* مساحة بين الأعمدة */
+    align-items: center; /* توسيط العناصر عموديًا في الشبكة */
+}
+
+.hero-content {
+    padding-right: 20px; /* مساحة داخلية يمنى لمحتوى قسم البطل */
+}
+
+.hero h1 {
+    font-size: 3em; /* حجم خط كبير للعنوان الرئيسي */
+    margin-bottom: 20px;
+    color: #2c3e50; /* لون العنوان الرئيسي (قابل للتغيير) */
+    line-height: 1.2; /* تباعد الأسطر للعنوان الرئيسي */
+}
+
+.hero p {
+    font-size: 1.2em; /* حجم خط أكبر للفقرة التعريفية */
+    color: #555; /* لون الفقرة التعريفية رمادي (قابل للتغيير) */
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block; /* عرض الزر كعنصر سطري مع خصائص عنصر الكتلة */
+    padding: 15px 30px; /* مساحة داخلية أكبر للزر */
+    background-color: #007bff; /* لون خلفية الزر أزرق (قابل للتغيير) */
+    color: #fff; /* لون نص الزر أبيض */
+    text-decoration: none; /* إزالة التسطير من رابط الزر */
+    border-radius: 8px; /* حواف دائرية للزر */
+    font-size: 1.1em; /* حجم خط أكبر للزر */
+    font-weight: bold; /* خط الزر سميك */
+    transition: background-color 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* لون خلفية أغمق للزر عند التحويم */
+}
+
+.hero-image img {
+    max-width: 100%; /* ضمان ألا تتجاوز الصورة عرض الحاوية الأبوية */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع للصورة */
+    border-radius: 20px; /* حواف دائرية لصورة قسم البطل */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* ظل خفيف لصورة قسم البطل */
+}
+
+
+/* تصميم قسم "نبذة عني" (About Section) */
+.about {
+    padding: 50px 90px; /* مساحة داخلية عمودية لقسم "نبذة عني" */
+    background-color: #fff; /* خلفية بيضاء لقسم "نبذة عني" */
+    text-align-last: center;
+}
+
+.about .container {
+    display:initial; /* استخدام فليكس بوكس للتخطيط */
+    align-items: center; /* توسيط العناصر عموديًا */
+}
+
+.about img {
+    max-width: 300px; /* تحديد عرض أقصى لصورة "نبذة عني" */
+    height: auto;
+    border-radius: 30%; /* جعل الصورة دائرية */
+    margin-left: 30px; /* مساحة هامش يسرى للصورة */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* ظل خفيف لصورة "نبذة عني" */
+}
+
+.about h2 {
+    font-size: 2.5em; /* حجم خط كبير لعنوان قسم "نبذة عني" */
+    margin-bottom: 20px;
+    color: #2c3e50; /* لون عنوان قسم "نبذة عني" (قابل للتغيير) */
+}
+
+.about p {
+    font-size: 1.1em; /* حجم خط أكبر لفقرة "نبذة عني" */
+    color: #555; /* لون فقرة "نبذة عني" رمادي (قابل للتغيير) */
+}
+
+.read-more-button {
+    display:grid; /* عرض الزر كعنصر سطري مع خصائص عنصر الكتلة */
+    padding: 20px 15px; /* مساحة داخلية للزر */
+    background-color: #28a745; /* لون خلفية الزر أخضر (قابل للتغيير) */
+    color: #fff; /* لون نص الزر أبيض */
+    text-decoration: none; /* إزالة التسطير من رابط الزر */
+    border-radius: 8px; /* حواف دائرية للزر */
+    font-size: 1em; /* حجم خط الزر */
+    font-weight: bold; /* خط الزر سميك */
+    transition: background-color 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+    text-align: center;
+    margin-left: auto; /* توسيط الزر أفقيًا */
+    margin-right: auto;
+   
+}
+
+.read-more-button:hover {
+    background-color: #1e7e34; /* لون خلفية أغمق للزر عند التحويم */
+}
+
+
+/* تصميم قسم "المهارات" (Skills Section) */
+.skills {
+    padding: 80px 0; /* مساحة داخلية عمودية لقسم "المهارات" */
+}
+
+.skills h2 {
+    font-size: 2.5em; /* حجم خط كبير لعنوان قسم "المهارات" */
+    margin-bottom: 40px;
+    color: #2c3e50; /* لون عنوان قسم "المهارات" (قابل للتغيير) */
+    text-align: center; /* توسيط عنوان قسم "المهارات" */
+}
+
+.skills-grid {
+    display: grid; /* استخدام شبكة التخطيط */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* شبكة متجاوبة للمهارات */
+    gap: 30px; /* مساحة بين عناصر الشبكة */
+}
+
+.skill-item {
+    background-color: #fff; /* خلفية بيضاء لعناصر المهارات */
+    padding: 30px;
+    border-radius: 10px; /* حواف دائرية لعناصر المهارات */
+    text-align: center; /* توسيط المحتوى داخل عناصر المهارات */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* ظل خفيف لعناصر المهارات */
+    transition: transform 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+}
+
+.skill-item:hover {
+    transform: translateY(-5px); /* حركة ارتفاع خفيفة عند التحويم */
+    box-shadow: 0 7px 20px rgba(0,0,0,0.15); /* ظل أقوى عند التحويم */
+}
+
+.skill-item img {
+    max-width: 100px; /* تحديد عرض أقصى لرموز المهارات */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.skill-item h3 {
+    font-size: 1.5em; /* حجم خط كبير لعناوين المهارات */
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.skill-item p {
+    color: #555; /* لون وصف المهارات رمادي (قابل للتغيير) */
+}
+
+.view-all-button {
+    display: block; /* عرض الزر كعنصر كتلة ليأخذ العرض الكامل */
+    text-align: center; /* توسيط النص داخل الزر */
+    margin-top: 40px; /* مساحة علوية للزر */
+    padding: 15px 30px; /* مساحة داخلية للزر */
+    background-color: #007bff; /* لون خلفية الزر أزرق (قابل للتغيير) */
+    color: #fff; /* لون نص الزر أبيض */
+    text-decoration: none; /* إزالة التسطير من رابط الزر */
+    border-radius: 8px; /* حواف دائرية للزر */
+    font-size: 1.1em; /* حجم خط الزر */
+    font-weight: bold; /* خط الزر سميك */
+    transition: background-color 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+    width: fit-content; /* احتواء الزر على حجم النص */
+    margin-left: auto; /* توسيط الزر أفقيًا */
+    margin-right: auto;
+}
+
+.view-all-button:hover {
+    background-color: #0056b3; /* لون خلفية أغمق للزر عند التحويم */
+}
+
+
+/* تصميم قسم "الأعمال" (Portfolio Section) */
+.portfolio {
+    padding: 80px 0; /* مساحة داخلية عمودية لقسم "الأعمال" */
+    background-color: #f0f0f0; /* خلفية رمادية فاتحة لقسم "الأعمال" */
+}
+
+.portfolio .container {
+    max-width: 1400px; /* عرض أقصى لحاوية قسم "الأعمال" */
+}
+
+.portfolio h2 {
+    font-size: 2.5em; /* حجم خط كبير لعنوان قسم "الأعمال" */
+    margin-bottom: 40px;
+    color: #2c3e50; /* لون عنوان قسم "الأعمال" (قابل للتغيير) */
+    text-align: center; /* توسيط عنوان قسم "الأعمال" */
+}
+
+.portfolio-grid {
+    display: grid; /* استخدام شبكة التخطيط */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* شبكة متجاوبة للأعمال */
+    gap: 30px; /* مساحة بين عناصر الشبكة */
+}
+
+.portfolio-item {
+    background-color: #fff; /* خلفية بيضاء لعناصر الأعمال */
+    border-radius: 10px; /* حواف دائرية لعناصر الأعمال */
+    overflow: hidden; /* لمنع تجاوز الصورة للحدود الدائرية */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* ظل خفيف لعناصر الأعمال */
+    transition: transform 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-7px); /* حركة ارتفاع أكبر عند التحويم */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* ظل أقوى عند التحويم */
+}
+
+.portfolio-item img {
+    width: 100%; /* ضمان ألا تتجاوز الصورة عرض الحاوية الأبوية */
+    height: auto;
+    display: block; /* لإزالة مساحة أسفل الصورة في بعض الحالات */
+}
+
+.portfolio-item h3 {
+    margin: 20px;
+    font-size: 1.3em; /* حجم خط كبير لعناوين الأعمال */
+    color: #333;
+}
+
+.portfolio-item p {
+    margin: 0 20px 20px;
+    color: #555; /* لون وصف الأعمال رمادي (قابل للتغيير) */
+}
+
+.project-link {
+    display: block; /* عرض الرابط كعنصر كتلة ليأخذ العرض الكامل */
+    text-align: center; /* توسيط النص داخل الرابط */
+    padding: 15px 0;
+    background-color: #28a745; /* لون خلفية الرابط أخضر (قابل للتغيير) */
+    color: #fff; /* لون نص الرابط أبيض */
+    text-decoration: none; /* إزالة التسطير من رابط الرابط */
+    border-bottom-left-radius: 10px; /* حواف دائرية سفلى يسرى للرابط */
+    border-bottom-right-radius: 10px; /* حواف دائرية سفلى يمنى للرابط */
+    font-weight: bold; /* خط الرابط سميك */
+    transition: background-color 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+}
+
+.project-link:hover {
+    background-color: #1e7e34; /* لون خلفية أغمق للرابط عند التحويم */
+}
+
+
+/* تصميم قسم "التدوينات" (Blog Section) */
+.blog {
+    padding: 80px 0; /* مساحة داخلية عمودية لقسم "التدوينات" */
+}
+
+.blog h2 {
+    font-size: 2.5em; /* حجم خط كبير لعنوان قسم "التدوينات" */
+    margin-bottom: 40px;
+    color: #2c3e50; /* لون عنوان قسم "التدوينات" (قابل للتغيير) */
+    text-align: center; /* توسيط عنوان قسم "التدوينات" */
+}
+
+.blog-grid {
+    display: grid; /* استخدام شبكة التخطيط */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* شبكة متجاوبة للتدوينات */
+    gap: 30px; /* مساحة بين عناصر الشبكة */
+}
+
+.blog-post {
+    background-color: #fff; /* خلفية بيضاء لعناصر التدوينات */
+    border-radius: 10px; /* حواف دائرية لعناصر التدوينات */
+    overflow: hidden; /* لمنع تجاوز الصورة للحدود الدائرية */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* ظل خفيف لعناصر التدوينات */
+    transition: transform 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+}
+
+.blog-post:hover {
+    transform: translateY(-7px); /* حركة ارتفاع أكبر عند التحويم */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* ظل أقوى عند التحويم */
+}
+
+.blog-post img {
+    width: 100%; /* ضمان ألا تتجاوز الصورة عرض الحاوية الأبوية */
+    height: auto;
+    display: block; /* لإزالة مساحة أسفل الصورة في بعض الحالات */
+}
+
+.blog-post h3 {
+    margin: 20px;
+    font-size: 1.4em; /* حجم خط كبير لعناوين التدوينات */
+    color: #333;
+    line-height: 1.3;
+}
+
+.blog-post p {
+    margin: 0 20px 20px;
+    color: #555; /* لون وصف التدوينات رمادي (قابل للتغيير) */
+}
+
+.read-more-button {
+    display: block; /* عرض الزر كعنصر كتلة ليأخذ العرض الكامل */
+    text-align: right; /* محاذاة النص لليمين داخل الزر */
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #28a745; /* لون خلفية الزر أخضر (قابل للتغيير) */
+    color: #fff; /* لون نص الزر أبيض */
+    text-decoration: none; /* إزالة التسطير من رابط الزر */
+    border-top-right-radius: 10px; /* حواف دائرية علوية يمنى للزر */
+    border-bottom-left-radius: 10px; /* حواف دائرية سفلية يسرى للزر */
+    font-weight: bold; /* خط الزر سميك */
+    transition: background-color 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+    width: fit-content; /* احتواء الزر على حجم النص */
+    margin-right: auto; /* محاذاة الزر لليمين */
+    margin-left: 20px; /* مساحة هامش يسرى للزر */
+}
+
+.blog-post .read-more-button:hover {
+    background-color: #1e7e34; /* لون خلفية أغمق للزر عند التحويم */
+}
+
+
+/* تصميم قسم "تواصل معي" (Contact Section) */
+.contact {
+    padding: 80px 0; /* مساحة داخلية عمودية لقسم "تواصل معي" */
+    background-color: #fff; /* خلفية بيضاء لقسم "تواصل معي" */
+}
+
+.contact .container {
+    display: grid; /* استخدام شبكة التخطيط */
+    grid-template-columns: 1fr 1fr; /* تقسيم الحاوية إلى عمودين متساويين */
+    gap: 50px; /* مساحة بين الأعمدة */
+    align-items: flex-start; /* محاذاة العناصر من الأعلى في الشبكة */
+}
+
+.contact h2 {
+    font-size: 2.5em; /* حجم خط كبير لعنوان قسم "تواصل معي" */
+    margin-bottom: 30px;
+    color: #2c3e50; /* لون عنوان قسم "تواصل معي" (قابل للتغيير) */
+    text-align: right; /* محاذاة عنوان قسم "تواصل معي" لليمين */
+    grid-column: 1 / span 2; /* جعل العنوان يمتد على كامل عرض الشبكة */
+}
+
+.contact p {
+    color: #555; /* لون فقرة قسم "تواصل معي" رمادي (قابل للتغيير) */
+    margin-bottom: 30px;
+    grid-column: 1 / span 2; /* جعل الفقرة تمتد على كامل عرض الشبكة */
+    text-align: right; /* محاذاة الفقرة لليمين */
+}
+
+.contact-form {
+    padding-right: 20px; /* مساحة داخلية يمنى لنموذج الاتصال */
+}
+
+.contact-info {
+    padding-left: 20px; /* مساحة داخلية يسرى لمعلومات الاتصال */
+    border-left: 1px solid #eee; /* خط فاصل عمودي على اليسار */
+}
+
+.contact-info h3 {
+    font-size: 1.8em; /* حجم خط كبير لعنوان معلومات الاتصال */
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: #007bff; /* لون روابط معلومات الاتصال أزرق (قابل للتغيير) */
+    text-decoration: none; /* إزالة التسطير من روابط معلومات الاتصال */
+    transition: color 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+}
+
+.contact-info a:hover {
+    color: #0056b3; /* لون أغمق لروابط معلومات الاتصال عند التحويم */
+}
+
+
+.input-group {
+    margin-bottom: 25px; /* مساحة سفلية لمجموعات الإدخال */
+}
+
+.input-group label {
+    display: block; /* عرض التسمية كعنصر كتلة ليأخذ العرض الكامل */
+    margin-bottom: 8px;
+    font-weight: bold; /* خط التسميات سميك */
+    color: #333;
+    text-align: right; /* محاذاة التسميات لليمين */
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%; /* جعل حقول الإدخال تأخذ العرض الكامل */
+    padding: 12px;
+    border: 1px solid #ccc; /* حدود حقول الإدخال رمادية */
+    border-radius: 5px; /* حواف دائرية لحقول الإدخال */
+    font-size: 1em; /* حجم خط حقول الإدخال */
+    outline: none; /* إزالة الخط الخارجي عند التركيز */
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #007bff; /* لون حدود حقول الإدخال عند التركيز أزرق (قابل للتغيير) */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* ظل خفيف عند التركيز */
+}
+
+.submit-button {
+    padding: 15px 30px; /* مساحة داخلية كبيرة لزر الإرسال */
+    background-color: #28a745; /* لون خلفية زر الإرسال أخضر (قابل للتغيير) */
+    color: #fff; /* لون نص زر الإرسال أبيض */
+    border: none;
+    border-radius: 8px; /* حواف دائرية لزر الإرسال */
+    font-size: 1.1em; /* حجم خط كبير لزر الإرسال */
+    font-weight: bold; /* خط زر الإرسال سميك */
+    cursor: pointer; /* تغيير شكل المؤشر عند التحويم */
+    transition: background-color 0.3s ease; /* تأثير انتقال سلس عند التحويم */
+}
+
+.submit-button:hover {
+    background-color: #1e7e34; /* لون خلفية أغمق لزر الإرسال عند التحويم */
+}
+.social-icons a {
+    color: #4a4fe9;
+    font-size: 1.7em;
+    padding-right: 30px;
+}
+
+
+/* تصميم التذييل (Footer) */
+footer {
+    background-color: #343a40; /* خلفية التذييل سوداء تقريبًا */
+    color: #fff; /* لون نص التذييل أبيض */
+    text-align: center; /* توسيط النص في التذييل */
+    padding: 30px 0;
+    font-size: 0.9em; /* حجم خط أصغر للتذييل */
+}
+
+/* تأثير تساقط الثلج */
+#snow-container {
+    position: fixed; /* تثبيت حاوية الثلج في مكانها على الشاشة */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* جعل حاوية الثلج غير قابلة للنقر لتمرير النقرات إلى العناصر الموجودة أسفلها */
+    z-index: 1000; /* ضع حاوية الثلج فوق كل المحتوى الآخر */
+}
+
+.snowflake {
+    position: absolute; /* تحديد موضع مطلق لرقاقات الثلج داخل الحاوية */
+    width: 7px; /* عرض رقاقة الثلج (يمكن تعديله) */
+    height: 7px; /* ارتفاع رقاقة الثلج (يمكن تعديله) */
+    background: rgb(68, 147, 243); /* لون رقاقة الثلج (يمكن تعديله) */
+    
+    /* ... باقي الأنماط الأساسية ... */
+    border-radius: 0%; /* إزالة تدوير الحواف إذا كان موجودًا */
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); /* شكل كريستالي بسيط */
+     /* جعل رقاقات الثلج دائرية */
+    opacity: 0.7; /* شفافية رقاقات الثلج (يمكن تعديله) */
+    animation: snowfall linear infinite; /* تطبيق حركة تساقط الثلج */
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh); /* تحريك رقاقات الثلج إلى أسفل الشاشة */
+    }
+}
